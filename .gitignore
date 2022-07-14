@@ -8,6 +8,6 @@ __pycache__/
 .idea/*
 
 # Packages
-/*.egg-info
+/*.egg-info/*
 /dist/*
 
