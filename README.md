@@ -4,7 +4,7 @@ A Window Manager for Tkinter On Windows 10
 [To Move](https://user-images.githubusercontent.com/73524758/175761318-5dea6c64-f1c1-410e-8abf-7adaa1b886a8.mp4)
 
 ## How to use
->~~~python
+>~~~Python
 >from WM import WM, TK
 >
 >...
@@ -25,7 +25,7 @@ I developed a code pattern based on the Sword Art Online (SAO) for Tkinter
 _Discharge_ is only a SAO reference.
 
 [`./TK/ref/__init__.py`](./TK/ref/__init__.py)
-> ~~~python
+> ~~~Python
 > class Call:  # Object-IDs are here.
 >    Tk, ... = tk.Tk, ...
 >    W = {'B': [ttk.Button, ], ...}  # W['B'][-1] for the last Button
