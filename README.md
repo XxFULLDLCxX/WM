@@ -1,11 +1,14 @@
 # WM
 A Window Manager for Tkinter On Windows 10
 
-https://user-images.githubusercontent.com/73524758/175761318-5dea6c64-f1c1-410e-8abf-7adaa1b886a8.mp4
+[To Move](https://user-images.githubusercontent.com/73524758/175761318-5dea6c64-f1c1-410e-8abf-7adaa1b886a8.mp4)
 
-from WM import WM, TK
 ## How to use
 >~~~python
+>from WM import WM, TK
+>
+>...
+>
 >if __name__ == '__main__':
 >    TK = TK()
 >    TK.title('Default')
