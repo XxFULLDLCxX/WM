@@ -1,1 +1,1 @@
-from main import WM, TK
+from WM import *
