@@ -103,7 +103,7 @@ class WM(System, Call.Toplevel):
         self.columnconfigure(0, weight=1)
         self.attributes('-transparentcolor', '#000001')
 
-    def __call__(self, window, loop=False):
+    def __call__(self, window):
         self.TK[:] = [window, self]
         self.TK[0].update_idletasks()
         self.TK[0].hWnd = int(self.TK[0].frame(), 16)
@@ -114,7 +114,8 @@ class WM(System, Call.Toplevel):
         Win = Control()
         Win.set_styles()
         Win.set_events()
-        Win.mainloop(loop)
+        W.user32.SetLayeredWindowAttributes(self.HWND, 255, 255, c.LWA_ALPHA)
+        return self
 
     def wm_size(self, event):
         size_caption = 33
@@ -216,6 +217,10 @@ class TK(System, Call.Tk):
         self.update_idletasks()
         self.hWnd = int(self.frame(), 16)
 
+    def attributes(self, *args, **kw):
+        for a in args[0]:
+            print(a)
+
 
 dwStyle = c.WS_OVERLAPPEDWINDOW | c.WS_CLIPCHILDREN | c.WS_CLIPSIBLINGS | c.WS_VISIBLE
 dwExStyle = c.WS_EX_LAYERED | c.WS_EX_APPWINDOW | c.WS_EX_ACCEPTFILES | c.WS_EX_TOPMOST
@@ -247,12 +252,6 @@ class Control(System, Call):
         # WM_ACTIVATE
         self.TK[1].bind('<<Activate>>', self.TK[1].wm_activate)
         self.TK[1].bind('<<Inactivate>>', self.TK[1].wm_inactivate)
-
-    def mainloop(self, loop):
-        W.user32.SetWindowPos(self.HWND, 0, 0, 0, 334, 508, c.SWP_NOMOVE | c.SWP_FRAMECHANGED)
-        self.TK[1].after(10, lambda: W.user32.SetLayeredWindowAttributes(self.HWND, 0, 255, c.LWA_ALPHA))
-        if loop:
-            self.TK[1].mainloop()
 
 
 """

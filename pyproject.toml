@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "574d"
+version = "0.0.0rc0.dev0"
+description = "A Window Manager for Tkinter On Windows 10"
+
+license = "MIT"
+
+authors = ["XxFULLDLCxX <XxFULLDLCxX@gmail.com>"]
+
+readme = "README.md"
+keywords = ["TK", "WM"]
+
+packages = [{ include = "WM" }]
+
+classifiers = [
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows"]
+
+[tool.poetry.urls]
+"Source" = "https://github.com/XxFULLDLCxX/WM"
+"Bug Tracker" = "https://github.com/XxFULLDLCxX/WM/issues"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
