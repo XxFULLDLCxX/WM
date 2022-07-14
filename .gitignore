@@ -1,1 +1,13 @@
-__pycache__
+.venv/*
+__pycache__/
+
+# Vs Code
+.vscode/*
+
+# PyCharm
+.idea/*
+
+# Packages
+/*.egg-info
+/dist/*
+
